@@ -1,12 +1,12 @@
 {
-  "name": "koa",
-  "version": "2.13.0",
-  "description": "Koa web app framework",
+  "name": "koa-uWS",
+  "version": "2.13.1",
+  "description": "Koa web app framework on top of uWebSockets.js",
   "main": "lib/application.js",
   "exports": {
     ".": {
       "require": "./lib/application.js",
-      "import": "./dist/koa.mjs"
+      "import": "./dist/koa-uWS.mjs"
     },
     "./": "./"
   },
@@ -16,10 +16,10 @@
     "lint": "eslint benchmarks lib test",
     "bench": "make -C benchmarks",
     "authors": "git log --format='%aN <%aE>' | sort -u > AUTHORS",
-    "build": "gen-esm-wrapper . ./dist/koa.mjs",
+    "build": "gen-esm-wrapper . ./dist/koa-uWS.mjs",
     "prepare": "npm run build"
   },
-  "repository": "koajs/koa",
+  "repository": "dhenson02/koa-uWS",
   "keywords": [
     "web",
     "app",
@@ -27,7 +27,9 @@
     "application",
     "framework",
     "middleware",
-    "rack"
+    "rack",
+    "koa",
+    "uWS"
   ],
   "license": "MIT",
   "dependencies": {
@@ -53,6 +55,7 @@
     "parseurl": "^1.3.2",
     "statuses": "^1.5.0",
     "type-is": "^1.6.16",
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.4.0",
     "vary": "^1.1.2"
   },
   "devDependencies": {
@@ -69,7 +72,7 @@
     "supertest": "^3.1.0"
   },
   "engines": {
-    "node": "^4.8.4 || ^6.10.1 || ^7.10.1 || >= 8.1.4"
+    "node": "^10.17.0 || ^11.15.0 || ^12.13.0 || ^13.1.0 || >= 14.0.0"
   },
   "files": [
     "dist",

@@ -15,13 +15,13 @@ describe('Load with esm', () => {
   });
 
   it('should default export koa', async() => {
-    const exported = await importESM('koa');
+    const exported = await importESM('koa-uWS');
     const required = require('../');
     assert.strictEqual(exported.default, required);
   });
 
   it('should match exports own property names', async() => {
-    const exported = new Set(Object.getOwnPropertyNames(await importESM('koa')));
+    const exported = new Set(Object.getOwnPropertyNames(await importESM('koa-uWS')));
     const required = new Set(Object.getOwnPropertyNames(require('../')));
 
     // Remove constructor properties + default export.
